@@ -1,0 +1,39 @@
+
+---- CLASS PROJECT DELIVERABLES ----
+
+Teams to submit the following. Attach the following items individually via Blackboard for the Class Project Assignment:
+
+1) URL to GitHub repository. Please add JKATHSADDLEBACKEDU as a contributor to the repository.
+
+2) zip file containing complete Qt project. To include working UI once project is opened and built in Qt.
+
+3) zip file containing ONLY the class files written specifically to satisfy project requirements. These classes are included in the Qt front end UI project from step 2)
+
+4) text file documenting which source files, line numbers from step 3) satisfy individual project requirements (#1 thru #10) and general project requirements (second paragraph of assignment). For each project requirement include source file .h, .cpp name and relevant line numbers. 
+
+5) agile product backlog, scrum backlog for sprint #1, #2 and daily scrum meeting documentation
+
+6) zip file containing doxygen class documentation
+
+7) hwgp01: at least 10 agile user stories
+
+8) hwgp02: white box unit tests and test plan
+
+9) hwgp03: UML class diagram, at least three use cases and at least three state diagrams
+
+10) valgrind memory leak check
+
+11) completed team project member contribution form. Each teammate must identify their accomplishments on the project
+
+Extra Credit [+4 pts]: Implement custom selection_sort algorithm
+
+Extra Credit [+1 pt]: use waffle.io (or similar) agile management tool
+
+
+DUE THURSDAY MAY 3rd
+
+
+---- PROJECT NOTES: composition vs aggregation ----
+
+http://www.learncpp.com/cpp-tutorial/102-composition/
+http://www.learncpp.com/cpp-tutorial/103-aggregation/
