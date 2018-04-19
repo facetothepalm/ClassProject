@@ -13,6 +13,9 @@
 //			=> Downside however is huge overhead
 //		- Consider a secondary abstract class for both actual shape/polygons (due to pen changes), and one for texts (due to text style changes)
 //		- QPainter deals with coordinates and information of the object itself (IN REGARDS TO PEN & TEXT STYLING/CHANGES, it is beyond the scope of the shape class, invoked in paintEvent)
+//		- Shapes have a QShape of its own as a data member	*****
+//		- Use the update() function under QWidget
+//
 namespace ns_erkk_shape{
 	struct coord;
 	class shape;
@@ -32,15 +35,16 @@ class shape{
 		//	Shape constructor (Allow derived shapes to handle array allocation)
 		//	Protected to restrict abstract class constructor to user
 
-		shape(string id, string type):id(id), type(type){}
+		shape(QPaintDevice* dev = nullptr, string id, string type):qpainter(dev), id(id), type(type){}
 		~shape();
 
 	//*	DATA MEMBERS
 	//======================
 
-		int id;			//	Holds shape id 			NOTE: Need to check for uniqueness****
-		string type; 	//	Holds shape type		NOTE: Leave type anyway for user awareness in case they're curious
-		coord* loc;		//	Stores the elements into an array (various sizes due to the type of the shape)
+		QPainter qpainter;		//	Assists in drawing shapes
+		int id;					//	Holds shape id 			NOTE: Need to check for uniqueness****
+		string type; 			//	Holds shape type		NOTE: Leave type anyway for user awareness in case they're curious
+		coord* loc;				//	Stores the elements into an array (various sizes due to the type of the shape)
 
 	public:
 
@@ -62,7 +66,7 @@ class shape{
 	//*	FUNCTIONS 	(Will not be invoked unless inherits from QPainter)
 	//==========================
 	
-		virtual void draw()const = 0;							//	Returns void, invokes QPainter draw based on shape type
+		virtual void draw()const = 0;							//	Returns void, invokes QPainter draw based on shape type (i.e. rectangle will invoke qpainter.drawRect(QRect(...)))
 		virtual void move(const coord new_loc) = 0;				//	Returns void, takes first coord of shape and moves it to that location [ADJUST REST OF VERTICES ALONG WAY]
 		
 };
